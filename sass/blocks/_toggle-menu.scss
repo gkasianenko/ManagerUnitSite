@@ -1,0 +1,50 @@
+$width: 20px;
+$height: 3px;
+
+.toggle-menu__middle {
+  position: relative;
+  display: block;
+  width: $width;
+  height: $height;
+  background-color: #000000;
+  transition: background-color 0.3s;
+
+  &:before,
+  &:after {
+    position: absolute;
+    content: "";
+    width: $width;
+    height: $height;
+    background-color: #000000;
+    left: 0px;
+    transition: transform 0.3s ease-in, top 0.3s linear 0.3s;
+  }
+
+  &:before {
+    top: -7px;
+  }
+
+  &:after {
+    top: 7px;
+  }
+}
+
+/*Active state*/
+
+.toggle-menu__middle.toggle-menu__middle--active {
+  background: transparent;
+
+  &:before,
+  &:after {
+    top: 0;
+    transition: top 0.3s linear, transform 0.3s ease-in 0.3s;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}

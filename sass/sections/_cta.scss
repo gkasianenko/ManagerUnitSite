@@ -1,0 +1,75 @@
+.section-cta {
+  position: relative;
+  padding-top: 83px;
+  padding-bottom: 84px;
+  background-image: url("./../img/functional/cta-bg.jpg");
+  background-size: cover;
+  background-position: center;
+
+  &::before {
+    @extend %overlay;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 9;
+    text-align: center;
+    color: #ffffff;
+
+  }
+
+  /* DESKTOP MD*/
+  @media (max-width: 1600px) {
+    @include bgImage("./../img/functional/cta-bg-1600.jpg")
+  }
+
+  /* Tablet */
+  @media (max-width: 1199px) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    @include bgImage("./../img/functional/cta-bg-900.jpg")
+  }
+
+  /* Mobile */
+  @media (max-width: 899px) {
+    @include bgImage("./../img/functional/cta-bg-600.jpg")
+  }
+
+  /* Mobile XS */
+  @media (max-width: 599px) {
+    @include bgImage("./../img/functional/cta-bg-320.jpg")
+   }
+}
+
+.section-cta .button {
+  display: block;
+  width: 230px;
+  margin-left: auto;
+  margin-right: auto;
+  text-decoration: none;
+}
+
+.section-cta__title {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1;
+  margin-bottom: 40px;
+
+  span {
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  /* Mobile */
+  @media (max-width: 899px) {
+    font-size: 20px;
+    margin-bottom: 30px;
+  
+  }
+
+  /* Mobile XS */
+  @media (max-width: 599px) {
+    margin-bottom: 20px;
+    font-size: 18px;
+   }
+}
